@@ -1,0 +1,11 @@
+name: Quiz Regression Check
+on:
+  push:
+    branches: [main]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile smoke test
+        run: python -m py_compile tests/repository_smoke.py
