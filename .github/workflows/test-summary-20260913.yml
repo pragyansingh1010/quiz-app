@@ -1,0 +1,11 @@
+name: Quiz Test Summary
+on:
+  push:
+    branches: [main]
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate test files
+        run: python -m py_compile tests/repository_smoke.py
